@@ -1,0 +1,23 @@
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fa fa-bars"></i>
+    </label>
+    <label class="logo" routerLink="/student/homepage">Scholarship</label>
+    <ul>
+   <li>
+        <li><a routerLink="/student/scholarshipForm" id="scholarshipForm">scholarshipForm</a></li>
+        <li><a  routerLink="/login" id="login" *ngIf="! isLoggedIn()">Login</a></li>
+        <li><a routerLink="/student/status">Status</a></li>
+        <li><a routerLink="/student/update">update</a></li>
+        <li><a routerLink="/student/profile">profile</a></li>
+        <li><a (click)="logOut()" id="logout" *ngIf="isLoggedIn()"> <!--(click)="logout()"-->LogOut</a></li>
+    </ul>
+</nav>
+
+
+
+
+
+
+
