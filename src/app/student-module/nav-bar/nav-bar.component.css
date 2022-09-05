@@ -5,8 +5,6 @@
     list-style: none;
     box-sizing: border-box;
     z-index: 10;
-    
-    
 }
 nav{
     position: fixed;
@@ -17,7 +15,7 @@ nav{
 }
 label.logo{
     color: white;
-    font-size: 35px;
+    font-size: 25px;
     line-height: 80px;
     padding: 0 100px;
     font-weight: bold;

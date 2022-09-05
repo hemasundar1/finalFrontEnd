@@ -15,7 +15,7 @@ export class StatusComponent implements OnInit {
 
   ngOnInit(): void {
     this.studentservice.getCurrentUser().subscribe(data=>{this.currentUser=data});
-    this.studentservice.getAlldocuments().subscribe(data=>{console.log(data),this.statusValue=data});
+    this.studentservice.getAlldocuments().subscribe(data=>{console.log("status",data),this.statusValue=data});
   }
 
 }

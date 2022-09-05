@@ -1,19 +1,19 @@
-<app-employeehomepage></app-employeehomepage>
+<app-navbaremployee></app-navbaremployee>
 <br><br>
 <div *ngFor="let x of xapp">
-    <div *ngIf="x.application_details.status==null || x.application_details.status==''">
-        <div *ngIf="currentUser.userId==x.application_details.assigned" id="requeststruct" class="grid-container pb-3 pt-3">
-            <div class="grid-item">Scholarship Id : <b>{{x.id}}</b></div>
-            <div class="grid-item">Student FirstName : <b>{{x.application_details.firstName}}</b></div>
-            <div class="grid-item">Student LastName : <b>{{x.application_details.lastName}}</b></div>
-            <div class="grid-item">Student ClassName : <b>{{x.application_details.className}}</b></div>
-            <div class="grid-item">Student State : <b>{{x.application_details.state}}</b></div>
-            <div class="grid-item">Student collegeName : <b>{{x.application_details.collegeName}}</b></div>
-            <div class="grid-item">Student Address: <b>{{x.application_details.postalAddress}}</b></div>
-            <div class="grid-item">Student mobileNumber: <b>{{x.application_details.userModel.mobileNumber}}</b></div>
-            <div class="grid-item">Student Email: <b>{{x.application_details.userModel.email}}</b></div>
-            <div class="grid-item"></div>
-            <div class="grid-item"><button (click)="onClick(x.id)" class="btn btn-primary btn-lg">View</button></div>
+    <ng-container *ngIf="x.application_details.status==null || x.application_details.status=='' ; else goto">
+        <div *ngIf="currentUser.userId==x.application_details.assigned; else goto" id="requeststruct" class="grid-container">
+            <div class="grid-item">Scholarship id : <b>{{x.id}}</b></div>
+            <div class="grid-item">Student name : <b>{{x.application_details.name}}</b></div>
+            <div class="grid-item">Student class name : <b>{{x.application_details.className}}</b></div>
+            <div class="grid-item">Student state : <b>{{x.application_details.state}}</b></div>
+            <div class="grid-item">Student college name : <b>{{x.application_details.collegeName}}</b></div>
+            <div class="grid-item">Student address: <b>{{x.application_details.postalAddress}}</b></div>
+            <div class="grid-item">Student mobile number: <b>{{x.application_details.userModel.mobileNumber}}</b></div>
+            <div class="grid-item">Student email: <b>{{x.application_details.userModel.email}}</b></div>
+            <div class="grid-item"><button (click)="onClick(x.id)" class="btn btn-primary btn-lg">view</button></div>
         </div><br><br>
-    </div>
+        <ng-template #goto><h3 style="color: blue;text-align: center;">NO REQUESTS TO VIEW </h3> </ng-template>
+    </ng-container>
+    <ng-template #goto><h3 style="color: blue;text-align: center;">NO REQUESTS TO VIEW </h3></ng-template>
 </div>

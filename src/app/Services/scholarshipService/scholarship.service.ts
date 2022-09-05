@@ -19,12 +19,11 @@ public saveDoc(id:any,data:any){
 }
 
 
-public uploadImage(fileData:any,firstName:any,lastName:any,collegeName:any,state:any,postalAddress:any,className:any,studentId:number){
+public uploadImage(fileData:any,name:any,collegeName:any,state:any,postalAddress:any,className:any,studentId:number){
 
   const httpParams = new HttpParams({
     fromObject: {
-      firstName : firstName,
-      lastName:lastName,
+      name:name,
       collegeName:collegeName,
       state:state,
       postalAddress:postalAddress,

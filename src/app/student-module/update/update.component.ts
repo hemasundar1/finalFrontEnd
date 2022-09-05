@@ -12,13 +12,13 @@ export class UpdateComponent implements OnInit {
   value:any;
   scholarToUpdate={
     appId:"",
-    firstName:"",
-    lastName:"",
+    name:"",
     postalAddress:"",
     state:"",
     className:"",
     collegeName:"",
     status:"",
+    assigned:"",
 
   };
   currentUser:any;

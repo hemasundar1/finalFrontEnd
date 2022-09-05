@@ -24,6 +24,7 @@ import { AssignemployeeComponent } from './admin-module/assignemployee/assignemp
 import { UpdateComponent } from './student-module/update/update.component';
 import { ProfileComponent } from './student-module/profile/profile.component';
 import { StatusComponent } from './student-module/status/status.component';
+import { HomepageComponent } from './student-module/homepage/homepage.component';
 
 const routes: Routes = [
 
@@ -31,7 +32,7 @@ const routes: Routes = [
 {path : 'login' , component: LoginFormComponent},
 {path : 'registration' , component: RegistrationFormComponent},
 {path : 'forbidden' , component: ForbiddenComponent},
-{path:'student/homepage',component:NavBarComponent},
+{path:'student/homepage',component:HomepageComponent},
 {path : 'student/scholarshipForm', component: ScholarshipFormComponent, canActivate:[AuthGuard],data:{roles:['Student']}},
 {path:'student/update',component:UpdateComponent},
 {path:'student/profile',component:ProfileComponent},
@@ -45,7 +46,6 @@ const routes: Routes = [
 {path:'employee/assign',component:AssignrequestComponent},
 {path:'employee/assign/:id',component:AssignemployeeComponent},
 {path:'employee/create',component:CreateemployeeComponent},
-
 
 {path : 'employee/homepage',component:EmployeehomepageComponent},
 {path : 'student/requests',component:StudentrequestsComponent},

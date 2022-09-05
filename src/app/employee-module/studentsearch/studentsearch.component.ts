@@ -8,7 +8,7 @@ import { EmployeeserviceService } from 'src/app/Services/employeeService/employe
 })
 export class StudentsearchComponent implements OnInit {
   x:any;
-  userid:any;
+  username:any;
   assingedValue:any;
 
   constructor(private empserve:EmployeeserviceService) { }
@@ -22,7 +22,7 @@ export class StudentsearchComponent implements OnInit {
   }
   searchRequest()
   {
-    this.empserve.getDocumentById(this.userid).subscribe(data=>{console.log("search method",data),this.x=data});
+    this.empserve.getByName(this.username).subscribe(data=>{console.log("search method",data),this.x=data});
     console.log("search method",this.x);
     this.getEmployeeById(this.x.application_details.assigned);
   }

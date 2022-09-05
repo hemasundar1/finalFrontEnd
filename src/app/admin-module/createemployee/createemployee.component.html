@@ -1,19 +1,19 @@
-<app-adminhomepage> </app-adminhomepage>
+<app-navbar></app-navbar>
 <div [hidden]="!submitted">
   <h4>Employee not created!</h4>
 </div>
 <br>
-<h2 style="text-align: center;">Create Employee</h2>
+<h2 style="text-align: center;">CREATE EMPLOYEE</h2>
 <hr>
 <div style="width: 400px;">
   <form (ngSubmit)="onSubmit()" style="margin-left: 3cm;">
     <div class="form-group">
-      <label for="name">Employee Name</label>
+      <label for="name">Employee name</label>
       <input type="text" class="form-control" id="userName" required [(ngModel)]="employee.userName" name="userName">
     </div>
 
     <div class="form-group">
-        <label for="name">Email Id</label>
+        <label for="name">Email id</label>
         <input type="text" class="form-control" id="email" required [(ngModel)]="employee.email" name="email">
     </div>
 
@@ -29,7 +29,7 @@
     </div>-->
 
     <div class="form-group">
-        <label for="name">mobile Number</label>
+        <label for="name">Mobile number</label>
         <input type="text" class="form-control" id="mobileNumber" required [(ngModel)]="employee.mobileNumber" name="mobileNumber">
     </div>
 
@@ -40,7 +40,7 @@
         </select>
      </div>
      <br>
-    <button type="submit" class="btn btn-success">Submit</button>
-    <button (click)="gotoList()" class="btn btn-primary" style="margin-left: 10px">Back </button>
+    <button type="submit" class="btn btn-success">create</button>
+    <button (click)="gotoList()" class="btn btn-primary" style="margin-left: 10px">back </button>
   </form>
 </div>

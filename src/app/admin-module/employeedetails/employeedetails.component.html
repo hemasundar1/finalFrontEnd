@@ -1,21 +1,21 @@
-<app-adminhomepage></app-adminhomepage>
+<app-navbar></app-navbar>
 <br>
-<h2 style="text-align: center;">Employee Details {{userId}}</h2>
+<h2 style="text-align: center;">EMPLOYEE DETAILS OF {{userId}}</h2>
 <hr>
 <div style="margin-left: 3cm;">
     <div>
-        <label>Employee Id: </label> <b>{{ employee.userId }}</b>
+        <label>employee id: </label> <b>{{ employee.userId }}</b>
     </div>
 
     <div>
-        <label>Employee Name: </label> <b>{{employee.userName}}</b>
+        <label>employee name: </label> <b>{{employee.userName}}</b>
     </div>
 
      <div>
-        <label>Email Id: </label> <b>{{employee.email}}</b>
+        <label>email : </label> <b>{{employee.email}}</b>
     </div>
     <div>
-        <label>Password: </label> <b>{{employee.password}}</b>
+        <label>password: </label> <b>{{employee.password}}</b>
     </div>
 
    <!-- <div>
@@ -23,7 +23,7 @@
     </div>-->
 
     <div>
-        <label>Phone Number: </label> <b>{{employee.mobileNumber}}</b>
+        <label>mobile number: </label> <b>{{employee.mobileNumber}}</b>
     </div>
 
    <!--<div>
@@ -31,6 +31,6 @@
     </div>-->
 
     <br>
-    <button (click)="gotoList()" class="btn btn-primary">Back</button>
+    <button (click)="gotoList()" class="btn btn-primary">back</button>
     
 </div>

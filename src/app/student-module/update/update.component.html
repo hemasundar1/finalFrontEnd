@@ -4,21 +4,21 @@
         <h1>wsovlKM</h1>
     </div>
     <div class="mt-5">
-        <h4 style="text-align: center;">Welcome to Update page</h4><br>
+        <h4 style="text-align: center;">WELCOME TO UPDATE YOUR APPLICATION</h4><br>
         <table class="table table-bordered">
             <thead class="thead">
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>update</th>
+                    <th>Update</th>
                 </tr>
             </thead>
             <tbody class="tbody">
                 <ng-container *ngFor="let x of scholarDetails">
                 <tr *ngIf="x.userModel.userId==currentUser.userId">
-                    <td> {{x.firstName}} {{x.lastName}}</td>
+                    <td> {{x.name}} </td>
                     <td> {{x.userModel.email}}</td>
-                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(x)"> Edit</button></td>
+                    <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(x)"> edit</button></td>
                 </tr>
             </ng-container>
             </tbody>
@@ -31,40 +31,37 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Update Your Application</h5>
+          <h5 class="modal-title" id="exampleModalLabel" *ngIf="scholarToUpdate.status==null || scholarToUpdate.status=='';else goto">update your application</h5>
+          <ng-template #goto>time out  cannot update application</ng-template>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         
-        <div class="modal-body" *ngIf="scholarToUpdate.status==null">
+        <div class="modal-body" *ngIf="scholarToUpdate.status==null ||scholarToUpdate.status==''">
             <form >
                 <div class="form-group">
-                    <label for="Firstname"> First Name :</label>
-                    <input type="text" required  [(ngModel)]="scholarToUpdate.firstName" name="firstName" class="form-control" >
+                    <label for="name"> name :</label>
+                    <input type="text"  [(ngModel)]="scholarToUpdate.name"  [ngModelOptions]="{standalone: true}" class="form-control" >
                 </div>
                 <div class="form-group">
-                    <label for="Lastname"> Last Name :</label>
-                    <input type="text"  [(ngModel)]="scholarToUpdate.lastName" lastName="lastName" [ngModelOptions]="{standalone: true}" class="form-control" >
-                </div>
-                <div class="form-group">
-                    <label for="collegename"> College Name :</label>
+                    <label for="collegename"> college name :</label>
                     <input type="text" #collegename [(ngModel)]="scholarToUpdate.collegeName" [ngModelOptions]="{standalone: true}" collegename="collegename" class="form-control" placeholder="College Name">
                 </div>
                 <div class="form-group">
-                    <label for="class"> Class :</label>
+                    <label for="class"> class :</label>
                     <input type="text" #class [(ngModel)]="scholarToUpdate.className"  [ngModelOptions]="{standalone: true}" class="class" class="form-control" placeholder="Class">
                 </div>
                 <div class="form-group">
-                    <label for="Address"> Address :</label>
+                    <label for="Address"> address :</label>
                     <input type="text" #address [(ngModel)]="scholarToUpdate.postalAddress" [ngModelOptions]="{standalone: true}" address="address" class="form-control" placeholder="Address">
                 </div>
                 <div class="form-group">
-                    <label for="State"> State :</label>
+                    <label for="State"> state :</label>
                     <input type="text" #state [(ngModel)]="scholarToUpdate.state" [ngModelOptions]="{standalone: true}" state="state" class="form-control" placeholder="state">
                 </div>
                
             </form><br>
             <div class="form-group">
-                <button type="Update" class="btn btn-primary" (click)="updateScholar()">Update</button>
+                <button type="Update" class="btn btn-primary" (click)="updateScholar()">update</button>
             </div>
         </div>
         

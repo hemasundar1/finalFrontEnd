@@ -21,6 +21,7 @@ export class EmployeeserviceService {
  private request=this.baseURL+"request"
  private approve=this.baseURL+"requestApprove"
  private reject=this.baseURL+"requestReject"
+ private search=this.baseURL+"search"
 
  private getByemployeeId="http://localhost:8086/admin/list"
  
@@ -52,6 +53,10 @@ export class EmployeeserviceService {
   {
     console.log(id,rejectR);
     return this.http.put(`${this.reject}/${id}`,rejectR);
+  }
+  public getByName(name:any):Observable<any>
+  {
+    return this.http.get<any>(`${this.search}/${name}`);
   }
   public downloadFile(loanId:any){
     const REQUEST_PARAMS = new HttpParams().set('id',loanId);

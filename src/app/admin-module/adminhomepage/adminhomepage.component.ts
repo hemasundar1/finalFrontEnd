@@ -7,16 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./adminhomepage.component.css']
 })
 export class AdminhomepageComponent implements OnInit {
-  value:any;
-  constructor(private router:Router) { }
+  
+  constructor() { }
 
   ngOnInit(): void {
   }
-  logout()
-  {
-    this.value=window.confirm("DO you want to logOut :] ?");
-    if(this.value==true){
-    this.router.navigate(['login']);}
-  }
-
 }

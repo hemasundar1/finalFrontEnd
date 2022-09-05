@@ -15,8 +15,7 @@ export class ScholarshipFormComponent implements OnInit {
   step: any = 1;
   appId: any;
   url_var: any;
-  firstName: any;
-  lastName: any;
+  name: any;
   collegeName: any;
   state: any;
   className: any;
@@ -43,8 +42,7 @@ export class ScholarshipFormComponent implements OnInit {
   ApplicationForm = new FormGroup({
     scholarshipDetails: new FormGroup({
 
-      firstName: new FormControl(null, [Validators.required]),
-      lastName: new FormControl(null, [Validators.required, Validators.pattern("^[a-zA-Z]+([\\s][a-zA-Z]+)*$")]),
+      name: new FormControl(null, [Validators.required, Validators.pattern("^[a-zA-Z]+([\\s][a-zA-Z]+)*$")]),
       state: new FormControl(null, [Validators.required]),
       postalAddress: new FormControl(null, [Validators.required, Validators.pattern("^(?:(?:\\+|0{0,2})91(\\$*[\\-]\\$*)?|[0]?)?[789]\\d{9}$"),]),
       collegeName: new FormControl(null, [Validators.required, Validators.email]),
@@ -116,8 +114,7 @@ console.log("not working");
       const user = this.ApplicationForm.controls["scholarshipDetails"].value;
       console.log(user);
       const formData = new FormData();
-      this.firstName = user.firstName;
-      this.lastName = user.lastName;
+      this.name = user.name;
       this.collegeName = user.collegeName;
       this.state = user.state;
       this.postalAddress = user.postalAddress;
@@ -126,7 +123,7 @@ console.log("not working");
 //console.log(this.firstName);
       formData.append('file', this.userFile);
       // console.log("formdata h ye",formData);
-      this.scholarship.uploadImage(formData, this.firstName, this.lastName, this.collegeName, this.state, this.postalAddress, this.className,this.studentId).subscribe({
+      this.scholarship.uploadImage(formData, this.name, this.collegeName, this.state, this.postalAddress, this.className,this.studentId).subscribe({
         next: (res) => {
           this.appId = res;
          // console.log("doc thak pahucha");

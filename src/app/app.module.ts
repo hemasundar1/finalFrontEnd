@@ -34,6 +34,9 @@ import { AssignemployeeComponent } from './admin-module/assignemployee/assignemp
 import { UpdateComponent } from './student-module/update/update.component';
 import { ProfileComponent } from './student-module/profile/profile.component';
 import { StatusComponent } from './student-module/status/status.component';
+import { NavbarComponent } from './admin-module/navbar/navbar.component';
+import { NavbaremployeeComponent } from './employee-module/navbaremployee/navbaremployee.component';
+import { HomepageComponent } from './student-module/homepage/homepage.component';
 
 
 
@@ -60,7 +63,10 @@ import { StatusComponent } from './student-module/status/status.component';
     AssignemployeeComponent,
     UpdateComponent,
     ProfileComponent,
-    StatusComponent
+    StatusComponent,
+    NavbarComponent,
+    NavbaremployeeComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
